@@ -10,7 +10,7 @@ class TestFile(unittest.TestCase):
         self.assertFalse(unique_characters("aaaaa"))
 
     def test_no_word_to_examine(self):
-        self.assertFalse(unique_characters(""))
+        self.assertTrue(unique_characters(""))
 
     
 if __name__ == '__main__':

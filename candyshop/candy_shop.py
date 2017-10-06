@@ -21,24 +21,24 @@ class CandyShop(object):
     money = 0
     type_of_sweets = ""
     candy_storage = []
-    
+
     def __init__(self, sugar):
         self.sugar = sugar
         
-        
-    def create_sweets(self):
+    def create_sweets(self, type_of_sweets):
         if self.type_of_sweets == "lollipop":
-            self.sugar_cost = 5
+            self.sugar_needed = 5
             self.price_sale = 10
         if self.type_of_sweets == "candy":
-            self.sugar_cost = 10
+            self.sugar_needed = 10
             self.price_sale = 20
         self.candy_storage.append(self.type_of_sweets)
-        self.sugar == self.sugar - self.sugar_cost
+        self.sugar == self.sugar - self.sugar_needed
 
     def buy_sugar(self, pack_sugar):
-        pack_sugar = 100
-        self.sugar - pack_sugar
+        self.price_sugar = 100
+        self.money - self.price_sugar
+        self.sugar + pack_sugar
         return self.sugar
     
     def sell(self):
@@ -64,7 +64,7 @@ print(candy_shop)
 #print(candy_shop)
 # Should print out:
 # "Invetory: 1 candies, 1 lollipops, Income:35, Sugar: 285gr"
-#candy_shop.buy_sugar(300)
-#print(candy_shop)
+candy_shop.buy_sugar(300)
+print(candy_shop)
 # Should print out:
 # "Invetory: 1 candies, 1 lollipops, Income:5, Sugar: 315gr"
