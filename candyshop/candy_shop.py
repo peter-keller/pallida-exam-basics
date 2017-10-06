@@ -16,25 +16,55 @@
 # If we buy sugar we can raise the CandyShop's amount of sugar and reduce the income by the price of it.
 # The CandyShop should be represented as string in this format:
 # "Inventory: 3 candies, 2 lollipops, Income: 100, Sugar: 400gr"
+class CandyShop(object):
+
+    money = 0
+    type_of_sweets = ""
+    candy_storage = []
+    
+    def __init__(self, sugar):
+        self.sugar = sugar
+        
+        
+    def create_sweets(self):
+        if self.type_of_sweets == "lollipop":
+            self.sugar_cost = 5
+            self.price_sale = 10
+        if self.type_of_sweets == "candy":
+            self.sugar_cost = 10
+            self.price_sale = 20
+        self.candy_storage.append(self.type_of_sweets)
+        self.sugar == self.sugar - self.sugar_cost
+
+    def buy_sugar(self, pack_sugar):
+        pack_sugar = 100
+        self.sugar - pack_sugar
+        return self.sugar
+    
+    def sell(self):
+        pass
+
+    def raise_prices(self):
+        pass
 
 candy_shop = CandyShop(300)
-candy_shop.create_sweets("candy")
-candy_shop.create_sweets("candy")
+#candy_shop.create_sweets("candy")
+#candy_shop.create_sweets("candy")
 candy_shop.create_sweets("lollipop")
-candy_shop.create_sweets("lollipop")
+#candy_shop.create_sweets("lollipop")
 print(candy_shop)
 # Should print out:
 # Invetory: 2 candies, 2 lollipops, Income: 0, Sugar: 270gr
-candy_shop.sell("candy", 1)
-print(candy_shop
+#candy_shop.sell("candy", 1)
+#print(candy_shop)
 # Should print out:
 # "Invetory: 1 candies, 2 lollipops, Income:20, Sugar: 285gr"
-candy_shop.raise_prices(5)
-candy_shop.sell("lollipop", 1)
-print(candy_shop)
+#candy_shop.raise_prices(5)
+#candy_shop.sell("lollipop", 1)
+#print(candy_shop)
 # Should print out:
 # "Invetory: 1 candies, 1 lollipops, Income:35, Sugar: 285gr"
-candy_shop.buy_sugar(300)
-print(candy_shop)
+#candy_shop.buy_sugar(300)
+#print(candy_shop)
 # Should print out:
 # "Invetory: 1 candies, 1 lollipops, Income:5, Sugar: 315gr"
