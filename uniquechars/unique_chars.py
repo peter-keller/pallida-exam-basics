@@ -6,11 +6,11 @@
 def unique_characters(word):
     letter_list = list(word)
     new_list = []
-    for i in range(len(letter_list)):
-        for letter in word:
-            if letter[i] not in new_list:
-                new_list.append(letter[i])
-                return new_list
+
+    for letter in letter_list:
+        if letter_list.count(letter) == 1:
+            new_list.append(letter)
+    return new_list
 
 
 print(unique_characters("anagram"))
